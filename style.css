@@ -1,0 +1,281 @@
+:root {
+  --bg: #fdf4ff;
+  --card: #ffffff;
+  --text: #1e1b4b;
+  --accent-yellow: #facc15;
+  --accent-purple: #7c3aed;
+  --accent-light: #fef9c3;
+  --muted: #4c1d95;
+  --border: #e9d5ff;
+  --shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  background: linear-gradient(180deg, #fdf4ff 0%, #fef9c3 100%);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Заголовок */
+.site-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header-bg {
+  background: linear-gradient(90deg, #fef08a, #e9d5ff);
+  border-radius: 20px;
+  padding: 30px 20px;
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.25);
+
+}
+
+.site-header h1 {
+  font-size: 34px;
+  background: linear-gradient(90deg, #7c3aed, #9333ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 760;
+  margin-bottom: 16px;
+}
+
+/* 🔥 Обновлённая фраза */
+.site-header .lead {
+  font-size: 22px;
+  font-weight: 650;
+  color: #fff;
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #7c3aed, #facc15);
+  border-radius: 10px;
+  display: inline-block;
+  text-shadow: 0 0 10px rgba(124, 58, 237, 0.5);
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px rgba(124, 58, 237, 0.4), 0 0 20px rgba(250, 204, 21, 0.4);
+  }
+  to {
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.8), 0 0 35px rgba(250, 204, 21, 0.8);
+  }
+}
+
+.site-header .lead span {
+  font-style: italic;
+  font-weight: 700;
+  color: #fffbe7;
+}
+
+
+/* Карточки */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.step {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.step h3 {
+  font-size: 22px;
+  color: var(--accent-purple);
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.step p {
+  margin-bottom: 14px;
+}
+
+/* Выбор */
+.choices {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.choice {
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  box-shadow: var(--shadow);
+}
+
+.choice strong {
+  margin-right: 6px;
+}
+
+.choice.good {
+  background: linear-gradient(90deg, #fef3c7, #fde68a);
+  color: #78350f;
+  border-left: 6px solid var(--accent-yellow);
+}
+
+.choice.bad {
+  background: linear-gradient(90deg, #ede9fe, #ddd6fe);
+  color: #4c1d95;
+  border-left: 6px solid var(--accent-purple);
+}
+
+/* Итоги */
+.summary-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  gap: 24px;
+  text-align: center;
+}
+
+.card {
+  max-width: 750px;
+  border-radius: 18px;
+  padding: 26px;
+  box-shadow: var(--shadow);
+}
+
+.card h2 {
+  margin-bottom: 12px;
+  font-size: 22px;
+}
+
+.card p {
+  font-weight: 500;
+}
+
+.bright {
+  background: linear-gradient(135deg, #fde68a, #fef3c7);
+}
+
+.bright-alt {
+  background: linear-gradient(135deg, #e9d5ff, #ddd6fe);
+}
+
+.card ol {
+  text-align: left;
+  margin-top: 10px;
+  padding-left: 20px;
+  font-weight: 500;
+  color: #4c1d95;
+}
+
+/* Футер */
+.site-footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+/* 📱 Адаптив для телефона и планшета */
+@media (max-width: 1024px) {
+  .container {
+    padding: 16px;
+  }
+
+  .site-header h1 {
+    font-size: 28px;
+  }
+
+  .site-header .lead {
+    font-size: 18px;
+    padding: 8px 16px;
+  }
+
+  .step {
+    padding: 18px;
+  }
+
+  .choice {
+    font-size: 14px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+}
+
+/* 📱 Адаптив для маленьких экранов (до 600px) */
+@media (max-width: 600px) {
+  body {
+    line-height: 1.5;
+  }
+
+  .header-bg {
+    padding: 20px 10px;
+  }
+
+  .site-header h1 {
+    font-size: 22px;
+    line-height: 1.2;
+  }
+
+  .site-header .lead {
+    font-size: 16px;
+    display: block;
+    margin: 0 auto;
+    line-height: 1.3;
+  }
+
+  .step {
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .choices {
+    gap: 8px;
+  }
+
+  .choice {
+    font-size: 13px;
+    padding: 10px 12px;
+    border-left-width: 4px;
+  }
+
+  .summary-block {
+    margin-top: 30px;
+    padding: 0 10px;
+  }
+
+  .card {
+    width: 100%;
+    padding: 18px;
+    font-size: 14px;
+  }
+
+  .card h2 {
+    font-size: 18px;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+
+  .site-footer {
+    font-size: 12px;
+    margin-top: 20px;
+  }
+}
